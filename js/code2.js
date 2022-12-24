@@ -1,3 +1,4 @@
+// let a = 10;
 // let elementWidth = "50px";
 // const result1 = Number.parseInt(elementWidth);
 // console.log(result1);
@@ -68,11 +69,11 @@
 // const result = Math.round(Math.random() * (max - min) + min);
 // console.log(result);
 // Один из примеров зачем необходима генерация случайногоо числа: пример подстановки рандомного фона на сайте
-const colors = ["tomato", "teal", "orange", "deeppink"];
-const max = colors.length - 1;
-const min = 0;
-const index = Math.round(Math.random() * (max - min) + min);
-console.log(index);
-const color = colors[index];
-console.log(color);
-document.body.style.backgroundColor = color;
+// const colors = ["tomato", "teal", "orange", "deeppink"];
+// const max = colors.length - 1;
+// const min = 0;
+// const index = Math.round(Math.random() * (max - min) + min);
+// console.log(index);
+// const color = colors[index];
+// console.log(color);
+// document.body.style.backgroundColor = color;
