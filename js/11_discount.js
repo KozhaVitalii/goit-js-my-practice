@@ -45,5 +45,10 @@ console.log(
   `Оформляем заказ на сумму ${payment} со скидкой ${discount * 100}%`,
 );
 
-let bill = payment - (payment * discount)
-console.log(`Итоговая сумма к оплате ${bill}`);
+payment -= payment * discount
+// or let payment = payment - (payment * discount)
+
+console.log(`Итоговая сумма к оплате ${payment}`);
+
+totalSpent += payment;
+console.log(`Общая сумма потраченная в магазине ${totalSpent}`);
