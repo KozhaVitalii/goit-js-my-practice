@@ -52,3 +52,6 @@ console.log(`Итоговая сумма к оплате ${payment}`);
 
 totalSpent += payment;
 console.log(`Общая сумма потраченная в магазине ${totalSpent}`);
+
+
+
