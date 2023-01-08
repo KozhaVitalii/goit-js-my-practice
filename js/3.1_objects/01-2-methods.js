@@ -73,16 +73,16 @@ const playlist = {
   },
 };
 
-// console.log(playlist.getTrackCount());
+console.log(playlist.getTrackCount());
 
-// playlist.changeName('Новое имя');
+playlist.changeName('Новое имя');
 
-// playlist.addTrack('новый трек 1');
-// console.log(playlist.getTrackCount());
+playlist.addTrack('новый трек 1');
+console.log(playlist.getTrackCount());
 
-// playlist.addTrack('новый трек 2');
-// console.log(playlist.getTrackCount());
+playlist.addTrack('новый трек 2');
+console.log(playlist.getTrackCount());
 
-// playlist.updateRating(4);
+playlist.updateRating(4);
 
-// console.log(playlist);
+console.log(playlist);
