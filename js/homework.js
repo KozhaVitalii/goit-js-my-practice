@@ -819,3 +819,689 @@ console.log(findLongestWord('Google do a roll')); // Google
 console.log(findLongestWord('May the force be with you')); // force
 
 // 2.22
+// Дополни код функции createArrayOfNumbers(min, max) так, чтобы она возвращала массив всех целых чисел от значения min до max.
+
+// Объявлена функция createArrayOfNumbers(min, max)
+// Вызов функции createArrayOfNumbers(1, 3) возвращает [1, 2, 3]
+// Вызов функции createArrayOfNumbers(14, 17) возвращает [14, 15, 16, 17]
+// Вызов функции createArrayOfNumbers(29, 34) возвращает [29, 30, 31, 32, 33, 34]
+// Вызов функции createArrayOfNumbers() со случайными min и max возвращает правильный массив
+// В цикле for использовался метод push
+
+function createArrayOfNumbers(min, max) {
+  const numbers = [];
+  for (let i = min; i <= max; i ++) numbers.push(i);
+  return numbers;
+}
+
+console.log(createArrayOfNumbers(1, 3)); // возвращает [1, 2, 3]
+console.log(createArrayOfNumbers(14, 17)); // возвращает [14, 15, 16, 17]
+console.log(createArrayOfNumbers(29, 34)); // возвращает [29, 30, 31, 32, 33, 34]
+
+// v1 Рабочий вариант
+// function createArrayOfNumbers1(min, max) {
+//   const numbers = [];
+//   while (min <= max) numbers.push(min++);
+
+//   return numbers;
+// }
+
+// v2
+// function sum(ran) {
+//   var listSumNumber = 0;
+//   for (var i of ran) console.log((listSumNumber += i));
+
+//   return listSumNumber;
+// }
+// console.log(createArrayOfNumbers1(1, 3)); // возвращает [1, 2, 3]
+// console.log(createArrayOfNumbers1(14, 17)); // возвращает [14, 15, 16, 17]
+// console.log(createArrayOfNumbers1(29, 34)); // возвращает [29, 30, 31, 32, 33, 34]
+
+// 2.23
+// Напиши функцію filterArray(numbers, value), яка приймає масив чисел(параметр numbers) і повертає
+// новий масив, в якому будуть тільки ті елементи масиву numbers, які більші за значення параметра value(число).
+
+// Оголошена функція filterArray(numbers, value)
+// Виклик функції filterArray([1, 2, 3, 4, 5], 3) повертає [4, 5]
+// Виклик функції filterArray([1, 2, 3, 4, 5], 4) повертає [5]
+// Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає []
+// Виклик функції filterArray([12, 24, 8, 41, 76], 38) повертає [41, 76]
+// Виклик функції filterArray([12, 24, 8, 41, 76], 20) повертає [24, 41, 76]
+// Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
+// В циклі for використовувався метод push
+
+const filterArray = function (numbers, value) {
+  const newArray = [];
+  for (const number of numbers) {
+    if (number > value) {
+      newArray.push(number);
+      // console.log(`${number} совпадает в массивах!`);
+    }
+  }
+  return newArray;
+};
+
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // повертає [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)); // повертає [5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)); // повертає []
+console.log(filterArray([12, 24, 8, 41, 76], 38)); // повертає [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); // повертає [24, 41, 76]
+
+// 2.24
+// Функція checkFruit(fruit) приймає рядок з назвою фрукта(параметр fruit), і перевіряє,
+//   чи присутній такий фрукт в масиві fruits.
+
+// Доповни код функції таким чином, що якщо:
+
+// фрукт присутній в масиві, то функція повертає true;
+// фрукт відсутній в масиві, то функція повертає false.
+// Оголошена функція checkFruit(fruit)
+// Виклик checkFruit("plum") повертає true
+// Виклик checkFruit("mandarin") повертає false
+// Виклик checkFruit("pear") повертає true
+// Виклик checkFruit("Pear") повертає false
+// Виклик checkFruit("apple") повертає true
+// Виклик функції checkFruit() з випадковим словом повертає правильне значення boolean
+// У функції використовувався метод includes
+
+function checkFruit(fruit) {
+  const fruits = ['apple', 'plum', 'pear', 'orange'];
+  return fruits.includes(fruit); 
+}
+
+console.log(checkFruit("plum")) // повертає true
+console.log(checkFruit("mandarin")) // повертає false
+console.log(checkFruit("pear")) // повертає true
+console.log(checkFruit("Pear")) // повертає false
+console.log(checkFruit("apple")) // повертає true
+
+// 2.25
+// Общими элементами массивов называют те элементы, которые присутствуют во всех массивах.
+// Например, в двух массивах[1, 3, 5] и[0, 8, 5, 3] общими будут числа 3 и 5, т.к.они присутствуют 
+// в обоих исходных массивах.А числа 0, 1 и 8 присутствуют только в одном из массивов.
+
+// Напиши функцию getCommonElements(array1, array2) которая получает два массива произвольной длины в 
+// параметры array1 и array2, и возвращает новый массив, состоящий из тех элементов, которые присутствуют 
+// в обоих исходных массивах.
+
+// Объявлена функция getCommonElements(array1, array2)
+// Вызов getCommonElements([1, 2, 3], [2, 4]) возвращает [2]
+// Вызов getCommonElements([1, 2, 3], [2, 1, 17, 19]) возвращает [1, 2]
+// Вызов getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) возвращает [12, 27, 3]
+// Вызов getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) возвращает [10, 30, 40]
+// Вызов getCommonElements([1, 2, 3], [10, 20, 30]) возвращает []
+// Вызов функции getCommonElements() со случайными двумя массивами возвращает правильный массив
+// В цикле for использовались методы includes и push
+
+function getCommonElements(array1, array2) {
+const uniqueNumbers = [];
+
+for (const number of array1) {
+  if (array2.includes(number)) {
+    uniqueNumbers.push(number);
+    // console.log(`${number} совпадает в массивах!`);
+  }
+}
+return uniqueNumbers;
+
+}
+
+console.log(getCommonElements([1, 2, 3], [2, 4]));  // возвращает [2]
+console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // возвращает [1, 2]
+console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // возвращает [12, 27, 3]
+console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); // возвращает [10, 30, 40]
+console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // возвращает []
+
+// 2.26
+// Выполни рефакторинг кода функции calculateTotalPrice(order) заменив цикл for на for...of.
+
+// Объявлена функция calculateTotalPrice(order)
+// Вызов функции calculateTotalPrice([12, 85, 37, 4]) возвращает 138
+// Вызов функции calculateTotalPrice([164, 48, 291]) возвращает 503
+// Вызов функции calculateTotalPrice([412, 371, 94, 63, 176]) возвращает 1116
+// Вызов функции calculateTotalPrice([]) возвращает 0
+// Вызов функции calculateTotalPrice() со случайным массивом чисел возвращает правильную сумму
+
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // Change code below this line
+
+//   for (let i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+
+//   // Change code above this line
+//   return total;
+// }
+
+// Выполнить рефакторинг используя for..of:
+
+function calculateTotalPrice(order) {
+  let total = 0;
+
+  for (const number of order) {
+    total += number;
+  }
+
+   return total;
+}
+
+console.log(calculateTotalPrice([12, 85, 37, 4])) // возвращает 138
+console.log(calculateTotalPrice([164, 48, 291])) // возвращает 503
+console.log(calculateTotalPrice([412, 371, 94, 63, 176])) // возвращает 1116
+console.log(calculateTotalPrice([])) // возвращает 0
+
+// 2.27
+// Выполни рефакторинг функции filterArray(numbers, value) заменив цикл for на for...of.
+
+// Объявлена функция filterArray(numbers, value)
+// Вызов функции filterArray([1, 2, 3, 4, 5], 3) возвращает [4, 5]
+// Вызов функции filterArray([1, 2, 3, 4, 5], 4) возвращает [5]
+// Вызов функции filterArray([1, 2, 3, 4, 5], 5) возвращает []
+// Вызов функции filterArray([12, 24, 8, 41, 76], 38) возвращает [41, 76]
+// Вызов функции filterArray([12, 24, 8, 41, 76], 20) возвращает [24, 41, 76]
+// Вызов функции filterArray() со случайным массивом и числом возвращает правильный массив
+// Функция filterArray() использует цикл for..of
+
+// function filterArray(numbers, value) {
+//   // Change code below this line
+//   const filteredNumbers = [];
+
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     const number = numbers[i];
+
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   }
+
+//   return filteredNumbers;
+//   // Change code above this line
+// }
+
+// Рефакторинг:
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+
+  for (const iterator of numbers) {
+    const number = iterator;
+
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
+  }
+  return filteredNumbers;
+}
+
+console.log(filterArray([1, 2, 3, 4, 5], 3)) // возвращает [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)) // возвращает [5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)) // возвращает []
+console.log(filterArray([12, 24, 8, 41, 76], 38)) // возвращает [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)) // возвращает [24, 41, 76]
+
+// 2.28
+// Дополни выражения остатка от деления так, чтобы код проходил тесты.
+
+// Значение переменной a это число 0
+// Значение переменной b это число 1
+// Значение переменной c это число 3
+// Значение переменной d это число 5
+// Значение переменной e это число 2
+
+const a = 3 % 3;
+const b = 4 % 3;
+const c = 11 % 4;
+const d = 12 % 7;
+const e = 8 % 3;
+
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+console.log(e);
+
+// 2.29
+// Напиши функцию getEvenNumbers(start, end) которая возвращает массив всех чётных чисел от start до end.
+// Чётным считается число которое делится на 2 без остатка(10 % 2 === 0).
+
+// Объявлена функция getEvenNumbers(start, end)
+// Вызов функции getEvenNumbers(2, 5) возвращает [2, 4]
+// Вызов функции getEvenNumbers(3, 11) возвращает [4, 6, 8, 10]
+// Вызов функции getEvenNumbers(6, 12) возвращает [6, 8, 10, 12]
+// Вызов функции getEvenNumbers(8, 8) возвращает [8]
+// Вызов функции getEvenNumbers(7, 7) возвращает []
+// Вызов функции getEvenNumbers() со случайными start и end возвращает правильный массив
+
+// function getEvenNumbers(start, end) {
+//   const numbers = [];
+//   let findNumbers = [];
+
+//   for (let i = start; ; i <= end; i++) numbers.push(i);
+//   const number = numbers[i];
+//   console.log(number);
+
+//     if (i % 2 === 0) {
+//       console.log('Чётное число: ', number);
+//       findNumbers += number;
+//     }
+
+//   return findNumbers;
+// }
+
+// console.log(getEvenNumbers(2, 5)) // возвращает [2, 4]
+// console.log(getEvenNumbers(3, 11)) // возвращает [4, 6, 8, 10]
+// console.log(getEvenNumbers(6, 12)) // возвращает [6, 8, 10, 12]
+// console.log(getEvenNumbers(8, 8)) // возвращает [8]
+// console.log(getEvenNumbers(7, 7)) // возвращает []
+
+function getEvenNumbers(start, end) {
+  const numbers = [];
+  let findNumbers = [];
+
+  for (let i = start; i <= end; i++) numbers.push(i);
+  // console.log(numbers);
+
+  for (let value of numbers) {
+    if (value % 2 === 0) {
+      findNumbers.push(value);
+    }
+  }
+
+  return findNumbers;
+}
+
+console.log(getEvenNumbers(2, 5)); // возвращает [2, 4]
+console.log(getEvenNumbers(3, 11)); // возвращает [4, 6, 8, 10]
+console.log(getEvenNumbers(6, 12)); // возвращает [6, 8, 10, 12]
+console.log(getEvenNumbers(8, 8)); // возвращает [8]
+console.log(getEvenNumbers(7, 7)); // возвращает []
+
+// 2.30
+// Дополни код так, чтобы в переменную number записывалось первое число от start до end, которое
+// делится на 5 без остатка.
+
+// Объявлена переменная start со значением 6
+// Объявлена переменная end со значением 27
+// Объявлена переменная number без инициализации
+// Итоговое значение переменной number равно 10
+// В цикле for используется break для выхода до завершения всех итераций цикла
+
+const start = 6;
+const end = 27;
+let number;
+
+for (let i = start; i < end; i += 1) {
+  if (i % 5 === 0) {
+    number = i;
+    break;
+  }
+}
+
+// 2.31
+// Выполни рефакторинг функции findNumber(start, end, divisor) так, чтобы она:
+
+// возвращала первое число от start до end, которое делится на divisor без остатка
+// не использовала оператор break
+// не использовала переменную number
+// Объявлена функция findNumber(start, end, divisor)
+// Вызов findNumber(2, 6, 5) возвращает 5
+// Вызов findNumber(8, 17, 3) возвращает 9
+// Вызов findNumber(6, 9, 4) возвращает 8
+// Вызов findNumber(16, 35, 7) возвращает 21
+// Вызов findNumber() со случайным набором чисел возвращает верный результат
+// В цикле for не должен использоваться break для выхода до завершения всех итераций цикла
+
+function findNumber(start, end, divisor) {
+
+  for (let i = start; i < end; i += 1) {
+    if (i % divisor === 0) {
+
+      return i;
+    }
+  }
+}
+
+console.log(findNumber(2, 6, 5)); // возвращает 5
+console.log(findNumber(8, 17, 3)); // возвращает 9
+console.log(findNumber(6, 9, 4)); // возвращает 8
+console.log(findNumber(16, 35, 7)); // возвращает 21
+
+
+// 2.32
+// Напиши функцию includes(array, value), которая делает тоже самое, что и метод массива
+// массив.includes(значение) - проверяет, есть ли в массиве array значение value, возвращая true если 
+// есть и false в противном случае.
+
+// При выполнении этой задачи в теле функции includes() нельзя использовать метод массив.includes(значение).
+
+// Объявлена функция includes(array, value)
+// Вызов includes([1, 2, 3, 4, 5], 3) возвращает true
+// Вызов includes([1, 2, 3, 4, 5], 17) возвращает false
+// Вызов includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter") возвращает true
+// Вызов includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus") возвращает false
+// Вызов includes(["apple", "plum", "pear", "orange"], "plum") возвращает true
+// Вызов includes(["apple", "plum", "pear", "orange"], "kiwi") возвращает false
+// Вызов includes() для случайного массива со случайным value возвращает верный boolean
+// В функции includes используется for, return, но не метод массива includes
+
+
+function includes(array, value) {
+  let message = false;
+
+  for (let i = 0; i <= array.length; i += 1) {
+    let item = array[i];
+
+    if (item === value) {
+      message = true;
+      break;
+    }
+  }
+  return message;
+}
+
+
+
+
+// МОДУЛЬ 3
+
+// 3.1
+// Дополни объект квартиры свойством owner, значением которого будет объект с информацией о владельце.
+// Добавь ему следующие свойства:
+
+// name - имя владельца, значение "Henry";
+// phone - телефон, значение "982-126-1588";
+// email - почта, значение "henry.carter@aptmail.com".
+// Объявлена переменная apartment
+// Значение переменной apartment это объект
+// У объекта переменной apartment присутствуют свойства imgUrl, descr, rating, price и tags со значениями
+// В объекте apartment есть свойство owner
+// Значение свойства owner это объект
+// В объекте owner есть свойство name
+// Значение свойства name это "Henry"
+// В объекте owner есть свойство phone
+// Значение свойства phone это "982-126-1588"
+// В объекте owner есть свойствао email
+// Значение свойства email это "henry.carter@aptmail.com"
+
+const apartment = {
+  imgUrl: 'https://via.placeholder.com/640x480',
+  descr: 'Spacious apartment in the city center',
+  rating: 4,
+  price: 2153,
+  tags: ['premium', 'promoted', 'top'],
+};
+
+// 3.2
+
+// Объявлена переменная apartment
+// Значение переменной apartment это объект
+// У объекта переменной apartment присутствуют свойства imgUrl, descr, rating, price и tags со значениями
+// В объекте apartment есть свойство owner
+// Значение свойства owner это объект
+// В объекте owner есть свойство name
+// Значение свойства name это "Henry"
+// В объекте owner есть свойство phone
+// Значение свойства phone это "982-126-1588"
+// В объекте owner есть свойствао email
+// Значение свойства email это "henry.carter@aptmail.com"
+
+const apartment = {
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+    tags: ["premium", "promoted", "top"],
+    owner: {
+        name: "Henry",
+        phone: "982-126-1588",
+        email: "henry.carter@aptmail.com"
+  }
+};
+
+// 3.3
+// Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам
+// обьекта apartment.
+
+// aptRating - рейтинг;
+// aptDescr - описание;
+// aptPrice - цена;
+// aptTags - теги.
+// Объявлена переменная apartment
+// Значение переменной apartment это объект
+// У объекта переменной apartment присутствуют свойства imgUrl, descr, rating, price и tags со значениями
+// Объявлена переменная aptRating
+// Значение переменной aptRating это число 4
+// Объявлена переменная aptDescr
+// Значение переменной aptDescr это строка "Spacious apartment in the city center"
+// Объявлена переменная aptPrice
+// Значение переменной aptPrice это число 2153
+// Объявлена переменная aptTags
+// Значение переменной aptTags это массив строк ["premium", "promoted", "top"]
+
+const apartment = {
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+  tags: ["premium", "promoted", "top"],
+};
+
+// Change code below this line
+const aptRating = apartment.rating;
+const aptDescr = apartment.descr;
+const aptPrice = apartment.price;
+const aptTags = apartment.tags;
+// Change code above this line
+
+// 3.4
+// Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта apartment.
+
+// ownerName - имя владельца;
+// ownerPhone - телефон владельца;
+// ownerEmail - почта владельца;
+// numberOfTags - количество элементов массива в свойстве tags;
+// firstTag - первый элемент массива в свойстве tags;
+// lastTag - последний элемент массива в свойстве tags.
+// Объявлена переменная apartment с помощью const
+// Значение переменной apartment это объект
+// Объявлена переменная ownerName с помощью const
+// Значение переменной ownerName это строка "Henry"
+// Объявлена переменная ownerPhone с помощью const
+// Значение переменной ownerPhone это "982-126-1588"
+// Объявлена переменная ownerEmail с помощью const
+// Значение переменной ownerEmail это "henry.carter@aptmail.com"
+// Объявлена переменная numberOfTags с помощью const
+// Значение переменной numberOfTags это 3
+// Объявлена переменная firstTag с помощью const
+// Значение переменной firstTag это "premium"
+// Объявлена переменная lastTag с помощью const
+// Значение переменной lastTag это "top"
+
+const apartment = {
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+  tags: ["premium", "promoted", "top"],
+  owner: {
+    name: "Henry",
+    phone: "982-126-1588",
+    email: "henry.carter@aptmail.com",
+  },
+};
+
+// Change code below this line
+const ownerName = apartment.owner.name;
+const ownerPhone = apartment.owner.phone;
+const ownerEmail = apartment.owner.email;
+const numberOfTags = apartment.tags.length;
+const firstTag = apartment.tags[0];
+const lastTag = apartment.tags[apartment.tags.length-1];
+// Change code above this line
+
+// 3.5
+// Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта
+// apartment используя синтаксис «квадратных скобок».
+
+// aptRating - рейтинг;
+// aptDescr - описание;
+// aptPrice - цена;
+// aptTags - теги.
+// Объявлена переменная apartment
+// Значение переменной apartment это объект
+// Объявлена переменная aptRating
+// Значение переменной aptRating это 4
+// Объявлена переменная aptDescr
+// Значение переменной aptDescr это "Spacious apartment in the city center"
+// Объявлена переменная aptPrice
+// Значение переменной aptPrice это 2153
+// Объявлена переменная aptTags
+// Значение переменной aptTags это ["premium", "promoted", "top"]
+
+const apartment = {
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+  tags: ["premium", "promoted", "top"],
+};
+
+// Change code below this line
+const aptRating = apartment['rating'];
+const aptDescr = apartment['descr'];
+const aptPrice = apartment['price'];
+const aptTags = apartment['tags'];
+// Change code above this line
+
+// 3.6
+// Дополни код обновив значения свойств объекта apartment:
+
+// цену в свойстве price на 5000;
+// рейтинг квартиры в свойстве rating на 4.7;
+// имя владельца во вложенном свойстве name на "Henry Sibola";
+// массив тегов в свойстве tags добавив в конец строку "trusted".
+// Объявлена переменная apartment
+// Значение переменной apartment это объект
+// Значение вложенного свойства price это число 5000
+// Значение вложенного свойства rating это число 4.7
+// Значение вложенного свойства name это строка "Henry Sibola"
+// Значение вложенного свойства tags это массив ["premium", "promoted", "top", "trusted"]
+
+const apartment = {
+  imgUrl: 'https://via.placeholder.com/640x480',
+  descr: 'Spacious apartment in the city center',
+  rating: 4,
+  price: 2153,
+  tags: ['premium', 'promoted', 'top'],
+  owner: {
+    name: 'Henry',
+    phone: '982-126-1588',
+    email: 'henry.carter@aptmail.com',
+  },
+};
+
+// Change code below this line
+apartment.price = 5000;
+apartment.rating = 4.7;
+apartment.owner.name = 'Henry Sibola';
+apartment.tags.push('trusted');
+
+console.log(apartment.price);
+console.log(apartment.rating);
+console.log(apartment.name);
+console.log(apartment.tags); 
+
+// 3.7
+// Добавь объекту apartment несколько новых свойств:
+
+// area - площадь в квадратных метрах, число 60;
+// rooms - количество комнат, число 3;
+// location - местоположение квартиры, обьект со следующими вложенными свойствами;
+// country - страна, строка "Jamaica";
+// city - город, строка "Kingston".
+// Объявлена переменная apartment
+// Значение переменной apartment это объект
+// Значение вложенного свойства area это число 60
+// Значение вложенного свойства rooms это число 3
+// Значение вложенного свойства location это объект
+// Значение вложенного свойства location.country это строка "Jamaica"
+// Значение вложенного свойства location.city это строка "Kingston"
+
+const apartment = {
+  imgUrl: 'https://via.placeholder.com/640x480',
+  descr: 'Spacious apartment in the city center',
+  rating: 4.7,
+  price: 5000,
+  tags: ['premium', 'promoted', 'top', 'trusted'],
+  owner: {
+    name: 'Henry Sibola',
+    phone: '982-126-1588',
+    email: 'henry.carter@aptmail.com',
+  },
+};
+
+// Change code below this line
+apartment.area = 60;
+apartment.rooms = 3;
+apartment.location = {};
+apartment.location.country = 'Jamaica';
+apartment.location.city = 'Kingston';
+
+// 3.8
+// Дополни код объявления объекта так, чтобы у него были свойства name, price, image и tags со 
+// значениями из переменных с аналогичными именами.Обязательно используй синтаксис коротких свойств.
+
+// Объявлена переменная product
+// Значение переменной product это объект
+// Значение вложенного свойства name это строка "Repair Droid"
+// Значение вложенного свойства price это число 2500
+// Значение вложенного свойства image это строка "https://via.placeholder.com/640x480"
+// Значение вложенного свойства tags это массив ["on sale", "trending", "best buy"]
+
+const name = 'Repair Droid';
+const price = 2500;
+const image = 'https://via.placeholder.com/640x480';
+const tags = ['on sale', 'trending', 'best buy'];
+
+const product = {
+  name,
+  price,
+  image,
+  tags,
+};
+
+// 3.9
+// Дополни код объявления объекта credentials так, чтобы в результате у него были два
+// свойства: email и password, имена которых хранятся в переменных emailInputName и passwordInputName.
+
+// Значением свойства email должна быть строка "henry.carter@aptmail.com", а значением свойства
+// password - строка "jqueryismyjam".
+
+// Объявлена переменная credentials
+// Значение переменной credentials это объект
+// В объекте credentials есть свойство email
+// Значение вложенного свойства email это строка "henry.carter@aptmail.com"
+// В объекте credentials есть свойство password
+// Значение вложенного свойства password это строка "jqueryismyjam"
+
+const emailInputName = 'email';
+const passwordInputName = 'password';
+
+const credentials = {
+  // Change code below this line
+  [emailInputName]: 'henry.carter@aptmail.com',
+  [passwordInputName]: 'jqueryismyjam',
+
+  // Change code above this line
+};
+
+3.10
+Перебери объект apartment используя цикл for...in и запиши в массив keys все его ключи, а 
+в массив values все значения его свойств.
+
+Объявлена переменная apartment
+Значение переменной apartment это объект
+Объявлена переменная keys
+Значение переменной keys это массив ["descr", "rating", "price"]
+Объявлена переменная values
+Значение переменной values это массив ["Spacious apartment in the city center", 4, 2153]

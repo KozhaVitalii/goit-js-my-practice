@@ -1,3 +1,6 @@
+
+
+// Оригинал от Репеты:
 /*
  * Работем с коллекцией товаров в корзине:
  * - getItems()
@@ -20,6 +23,7 @@ const cart = {
     return this.items;
   },
   add(product) {
+    this.items.push(product);
     for (const item of this.items) {
       if (item.name === product.name) {
         item.quantity += 1;
@@ -75,6 +79,7 @@ cart.add({ name: '🍓', price: 110 });
 cart.add({ name: '🍓', price: 110 });
 cart.add({ name: '🍓', price: 110 });
 
+
 console.table(cart.getItems());
 
 console.log('Total: ', cart.countTotalPrice());
@@ -83,13 +88,13 @@ cart.remove('🍇');
 console.table(cart.getItems());
 
 // cart.clear();
-// console.log(cart.getItems());
+console.log(cart.getItems());
 
 console.log('Total: ', cart.countTotalPrice());
 
-// cart.increaseQuantity('🍎');
-// console.table(cart.getItems());
+cart.increaseQuantity('🍎');
+console.table(cart.getItems());
 
-// cart.decreaseQuantity('🍋');
-// cart.decreaseQuantity('🍋');
-// console.table(cart.getItems());
+cart.decreaseQuantity('🍋');
+cart.decreaseQuantity('🍋');
+console.table(cart.getItems());
