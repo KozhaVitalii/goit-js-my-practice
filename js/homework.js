@@ -1,6 +1,6 @@
-// 1.1 
+// 1.1
 // Change code below this line
-const productName = 'Droid'; 
+const productName = 'Droid';
 // console.log(productName);
 // 'Droid'
 
@@ -20,7 +20,7 @@ pricePerItem = 3500;
 // Change code below this line
 const topSpeed = 160;
 const distance = 617.54;
-const login = "mango935"
+const login = 'mango935';
 let isOnline = true;
 let isAdmin = false;
 
@@ -44,12 +44,12 @@ let pricePerDroid = 800;
 let orderedQuantity = 6;
 let deliveryFee = 50;
 let totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
-const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`
+const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`;
 
 // 1.7
 // Change code below this line
 function sayHi() {
-  console.log("Hello, this is my first function!");
+  console.log('Hello, this is my first function!');
 }
 
 sayHi();
@@ -57,7 +57,7 @@ sayHi();
 // 1.8
 // Change code below this line
 function add(a, b, c) {
-  console.log(`Addition result equals ${a+b+c}`);
+  console.log(`Addition result equals ${a + b + c}`);
   // Change code above this line
 }
 
@@ -79,25 +79,24 @@ console.log(add(15, 27, 10));
 console.log(add(10, 20, 30));
 console.log(add(5, 10, 15));
 
-
 // 1.10
 
-function makeMessage (name, price) {
+function makeMessage(name, price) {
   // Change code below this line
-   const message = `You picked ${name}, price per item is ${price} credits`;
+  const message = `You picked ${name}, price per item is ${price} credits`;
   // Change code above this line
   return message;
-};
+}
 
 // 1.11
 
-function calculateTotalPrice (orderedQuantity, pricePerItem) {
+function calculateTotalPrice(orderedQuantity, pricePerItem) {
   // Change code below this line
   const totalPrice = orderedQuantity * pricePerItem;
 
   // Change code above this line
   return totalPrice;
-};
+}
 
 // 1.12
 function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
@@ -142,7 +141,6 @@ function checkAge(age) {
   return message;
 }
 
-
 // 1.16
 function checkStorage(available, ordered) {
   let message;
@@ -167,7 +165,6 @@ checkStorage(200, 20);
 checkStorage(200, 150);
 checkStorage(150, 180);
 
-
 // 1.17
 let a = 5;
 let b = 10;
@@ -179,7 +176,6 @@ a += 2;
 b -= 4;
 c *= 3;
 d /= 10;
-
 
 // 1.18
 function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
@@ -313,7 +309,6 @@ function checkPassword(password) {
   return message;
 }
 
-
 // 1.27
 function getSubscriptionPrice(type) {
   let price;
@@ -394,7 +389,6 @@ function getShippingCost(country) {
   return message;
 }
 
-
 // 1.30
 function getNameLength(name) {
   const message = `Name ${name} is ${name.length} characters long`; // Change this line
@@ -463,11 +457,12 @@ function checkForSpam(message) {
 
 // 2.1
 function checkAge(age) {
-  if (age >= 18) { // Change this line
-    return "You are an adult";
+  if (age >= 18) {
+    // Change this line
+    return 'You are an adult';
   }
 
-  return "You are a minor";
+  return 'You are a minor';
 }
 
 // 2.2
@@ -488,12 +483,12 @@ function checkPassword(password) {
 function checkStorage(available, ordered) {
   if (ordered === 0) {
     return 'Your order is empty!';
-    }
+  }
   if (ordered > available) {
     return 'Your order is too large, not enough goods in stock!';
   }
   return 'The order is accepted, our manager will contact you';
-};
+}
 
 // 2.4
 
@@ -511,7 +506,7 @@ const lastElement = fruits[3];
 
 const fruits = ['apple', 'plum', 'pear', 'orange'];
 fruits[1] = 'peach';
-fruits[3] = 'banana'; 
+fruits[3] = 'banana';
 
 // 2.7
 
@@ -545,7 +540,6 @@ function splitMessage(message, delimiter) {
   return words;
 }
 
-
 // 2.11
 
 function calculateEngravingPrice(message, pricePerWord) {
@@ -569,9 +563,9 @@ function makeStringFromArray(array, delimiter) {
 
 function slugify(title) {
   // Change code below this line
-const slug = title.toLocaleLowerCase().split(' ').join('-'); 
+  const slug = title.toLocaleLowerCase().split(' ').join('-');
 
-  return slug
+  return slug;
   // Change code above this line
 }
 
@@ -580,8 +574,8 @@ const slug = title.toLocaleLowerCase().split(' ').join('-');
 const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
 
 // Change code below this line
-const firstTwoEls = fruits.slice(0,2); // ["apple", "plum"]
-const nonExtremeEls = fruits.slice(1,4); // ["plum", "pear", "orange"]
+const firstTwoEls = fruits.slice(0, 2); // ["apple", "plum"]
+const nonExtremeEls = fruits.slice(1, 4); // ["plum", "pear", "orange"]
 const lastThreeEls = fruits.slice(2, 5); // ["pear", "orange", "banana"]
 
 // 2.15
@@ -594,11 +588,11 @@ const allClients = oldClients.concat(newClients); // Change this line
 // 2.16
 
 // 2.17
-// Напиши функцію makeArray(firstArray, secondArray, maxLength) для створення нового масиву з усіма 
-// елементами двох вихідних firstArray і secondArray. Параметр maxLength містить максимально допустиму 
+// Напиши функцію makeArray(firstArray, secondArray, maxLength) для створення нового масиву з усіма
+// елементами двох вихідних firstArray і secondArray. Параметр maxLength містить максимально допустиму
 // довжину нового масиву.
 
-// Якщо кількість елементів нового масиву більша за maxLength, функція повинна повернути копію масиву 
+// Якщо кількість елементів нового масиву більша за maxLength, функція повинна повернути копію масиву
 // довжиною maxLength елементів.В іншому випадку функція повинна повернути новий масив повністю.
 
 // Оголошена функція makeArray(firstArray, secondArray, maxLength)
@@ -610,25 +604,24 @@ const allClients = oldClients.concat(newClients); // Change this line
 // Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0) повертає []
 // Виклик функції makeArray() з випадковими масивами і випадковим числом повертає правильний масив
 
-
 const makeArray = function (firstArray, secondArray, maxLength) {
   let newArray = firstArray.concat(secondArray);
   console.log(newArray.length > maxLength);
   console.log(newArray.slice(0, maxLength));
   if (newArray.length > maxLength) {
     newArray = newArray.slice(0, maxLength);
-  } else { }
-  
+  } else {
+  }
+
   return newArray;
 };
 
-console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); //["Mango", "Poly", "Ajax"]
-console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); // ["Mango", "Poly", "Houston", "Ajax"];
-console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3));  // ["Mango", "Ajax", "Chelsea"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); // ["Earth", "Jupiter"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); // ["Earth", "Jupiter", "Neptune", "Uranus"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
-
+console.log(makeArray(['Mango', 'Poly'], ['Ajax', 'Chelsea'], 3)); //["Mango", "Poly", "Ajax"]
+console.log(makeArray(['Mango', 'Poly', 'Houston'], ['Ajax', 'Chelsea'], 4)); // ["Mango", "Poly", "Houston", "Ajax"];
+console.log(makeArray(['Mango'], ['Ajax', 'Chelsea', 'Poly', 'Houston'], 3)); // ["Mango", "Ajax", "Chelsea"]
+console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus'], 2)); // ["Earth", "Jupiter"]
+console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus'], 4)); // ["Earth", "Jupiter", "Neptune", "Uranus"]
+console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus', 'Venus'], 0)); // []
 
 // 2.18
 
@@ -657,7 +650,6 @@ console.log(calculateTotal(7)); // повертає 28
 console.log(calculateTotal(18)); // повертає 171
 console.log(calculateTotal(24)); // повертає 300
 
-
 // 2.19
 // Доповни код циклу for таким чином, щоб він послідовно логував усі елементи масиву fruits.
 
@@ -670,11 +662,10 @@ console.log(calculateTotal(24)); // повертає 300
 // В тілі циклу for оголошується змінна const fruit і цій змінній присвоюється значення - елемент масиву
 // В тілі циклу for використовується виведення у консоль змінної fruit
 
-
 const fruits = ['apple', 'plum', 'pear', 'orange'];
 
-for (let i = 0; i < fruits.length; i += 1) { 
-  const fruit = fruits[i]; 
+for (let i = 0; i < fruits.length; i += 1) {
+  const fruit = fruits[i];
   console.log(fruit);
 }
 
@@ -690,10 +681,10 @@ for (let i = 0; i < fruits.length; i += 1) {
 // Виклик функції calculateTotalPrice() з випадковим масивом повертає правильне значення
 
 const calculateTotalPrice = function (order) {
-// v1:
+  // v1:
   // let total = 0;
   // for (let i = 0; i < order.length; i += 1) {
-    
+
   //   total += order[i];
   // }
   // return total;
@@ -710,7 +701,6 @@ const calculateTotalPrice = function (order) {
 console.log(calculateTotalPrice([12, 85, 37, 4])); // повертає 138
 console.log(calculateTotalPrice([164, 48, 291])); // повертає 503
 console.log(calculateTotalPrice([412, 371, 94, 63, 176])); // повертає 1116
-
 
 // 2.21
 // Напиши функцію findLongestWord(string), яка приймає довільний рядок, що складається тільки зі слів,
@@ -783,7 +773,7 @@ console.log(calculateTotalPrice([412, 371, 94, 63, 176])); // повертає 1
 //     }
 //   }
 //     return maxLengthWord;
-    
+
 // };
 // console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // jumped
 // console.log(findLongestWord('Google do a roll')); // Google
@@ -830,7 +820,7 @@ console.log(findLongestWord('May the force be with you')); // force
 
 function createArrayOfNumbers(min, max) {
   const numbers = [];
-  for (let i = min; i <= max; i ++) numbers.push(i);
+  for (let i = min; i <= max; i++) numbers.push(i);
   return numbers;
 }
 
@@ -906,22 +896,22 @@ console.log(filterArray([12, 24, 8, 41, 76], 20)); // повертає [24, 41, 
 
 function checkFruit(fruit) {
   const fruits = ['apple', 'plum', 'pear', 'orange'];
-  return fruits.includes(fruit); 
+  return fruits.includes(fruit);
 }
 
-console.log(checkFruit("plum")) // повертає true
-console.log(checkFruit("mandarin")) // повертає false
-console.log(checkFruit("pear")) // повертає true
-console.log(checkFruit("Pear")) // повертає false
-console.log(checkFruit("apple")) // повертає true
+console.log(checkFruit('plum')); // повертає true
+console.log(checkFruit('mandarin')); // повертає false
+console.log(checkFruit('pear')); // повертає true
+console.log(checkFruit('Pear')); // повертає false
+console.log(checkFruit('apple')); // повертає true
 
 // 2.25
 // Общими элементами массивов называют те элементы, которые присутствуют во всех массивах.
-// Например, в двух массивах[1, 3, 5] и[0, 8, 5, 3] общими будут числа 3 и 5, т.к.они присутствуют 
+// Например, в двух массивах[1, 3, 5] и[0, 8, 5, 3] общими будут числа 3 и 5, т.к.они присутствуют
 // в обоих исходных массивах.А числа 0, 1 и 8 присутствуют только в одном из массивов.
 
-// Напиши функцию getCommonElements(array1, array2) которая получает два массива произвольной длины в 
-// параметры array1 и array2, и возвращает новый массив, состоящий из тех элементов, которые присутствуют 
+// Напиши функцию getCommonElements(array1, array2) которая получает два массива произвольной длины в
+// параметры array1 и array2, и возвращает новый массив, состоящий из тех элементов, которые присутствуют
 // в обоих исходных массивах.
 
 // Объявлена функция getCommonElements(array1, array2)
@@ -934,19 +924,18 @@ console.log(checkFruit("apple")) // повертає true
 // В цикле for использовались методы includes и push
 
 function getCommonElements(array1, array2) {
-const uniqueNumbers = [];
+  const uniqueNumbers = [];
 
-for (const number of array1) {
-  if (array2.includes(number)) {
-    uniqueNumbers.push(number);
-    // console.log(`${number} совпадает в массивах!`);
+  for (const number of array1) {
+    if (array2.includes(number)) {
+      uniqueNumbers.push(number);
+      // console.log(`${number} совпадает в массивах!`);
+    }
   }
-}
-return uniqueNumbers;
-
+  return uniqueNumbers;
 }
 
-console.log(getCommonElements([1, 2, 3], [2, 4]));  // возвращает [2]
+console.log(getCommonElements([1, 2, 3], [2, 4])); // возвращает [2]
 console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // возвращает [1, 2]
 console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // возвращает [12, 27, 3]
 console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); // возвращает [10, 30, 40]
@@ -983,13 +972,13 @@ function calculateTotalPrice(order) {
     total += number;
   }
 
-   return total;
+  return total;
 }
 
-console.log(calculateTotalPrice([12, 85, 37, 4])) // возвращает 138
-console.log(calculateTotalPrice([164, 48, 291])) // возвращает 503
-console.log(calculateTotalPrice([412, 371, 94, 63, 176])) // возвращает 1116
-console.log(calculateTotalPrice([])) // возвращает 0
+console.log(calculateTotalPrice([12, 85, 37, 4])); // возвращает 138
+console.log(calculateTotalPrice([164, 48, 291])); // возвращает 503
+console.log(calculateTotalPrice([412, 371, 94, 63, 176])); // возвращает 1116
+console.log(calculateTotalPrice([])); // возвращает 0
 
 // 2.27
 // Выполни рефакторинг функции filterArray(numbers, value) заменив цикл for на for...of.
@@ -1033,11 +1022,11 @@ function filterArray(numbers, value) {
   return filteredNumbers;
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3)) // возвращает [4, 5]
-console.log(filterArray([1, 2, 3, 4, 5], 4)) // возвращает [5]
-console.log(filterArray([1, 2, 3, 4, 5], 5)) // возвращает []
-console.log(filterArray([12, 24, 8, 41, 76], 38)) // возвращает [41, 76]
-console.log(filterArray([12, 24, 8, 41, 76], 20)) // возвращает [24, 41, 76]
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // возвращает [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)); // возвращает [5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)); // возвращает []
+console.log(filterArray([12, 24, 8, 41, 76], 38)); // возвращает [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); // возвращает [24, 41, 76]
 
 // 2.28
 // Дополни выражения остатка от деления так, чтобы код проходил тесты.
@@ -1152,10 +1141,8 @@ for (let i = start; i < end; i += 1) {
 // В цикле for не должен использоваться break для выхода до завершения всех итераций цикла
 
 function findNumber(start, end, divisor) {
-
   for (let i = start; i < end; i += 1) {
     if (i % divisor === 0) {
-
       return i;
     }
   }
@@ -1166,10 +1153,9 @@ console.log(findNumber(8, 17, 3)); // возвращает 9
 console.log(findNumber(6, 9, 4)); // возвращает 8
 console.log(findNumber(16, 35, 7)); // возвращает 21
 
-
 // 2.32
 // Напиши функцию includes(array, value), которая делает тоже самое, что и метод массива
-// массив.includes(значение) - проверяет, есть ли в массиве array значение value, возвращая true если 
+// массив.includes(значение) - проверяет, есть ли в массиве array значение value, возвращая true если
 // есть и false в противном случае.
 
 // При выполнении этой задачи в теле функции includes() нельзя использовать метод массив.includes(значение).
@@ -1184,7 +1170,6 @@ console.log(findNumber(16, 35, 7)); // возвращает 21
 // Вызов includes() для случайного массива со случайным value возвращает верный boolean
 // В функции includes используется for, return, но не метод массива includes
 
-
 function includes(array, value) {
   let message = false;
 
@@ -1198,9 +1183,6 @@ function includes(array, value) {
   }
   return message;
 }
-
-
-
 
 // МОДУЛЬ 3
 
@@ -1246,16 +1228,16 @@ const apartment = {
 // Значение свойства email это "henry.carter@aptmail.com"
 
 const apartment = {
-  imgUrl: "https://via.placeholder.com/640x480",
-  descr: "Spacious apartment in the city center",
+  imgUrl: 'https://via.placeholder.com/640x480',
+  descr: 'Spacious apartment in the city center',
   rating: 4,
   price: 2153,
-    tags: ["premium", "promoted", "top"],
-    owner: {
-        name: "Henry",
-        phone: "982-126-1588",
-        email: "henry.carter@aptmail.com"
-  }
+  tags: ['premium', 'promoted', 'top'],
+  owner: {
+    name: 'Henry',
+    phone: '982-126-1588',
+    email: 'henry.carter@aptmail.com',
+  },
 };
 
 // 3.3
@@ -1279,11 +1261,11 @@ const apartment = {
 // Значение переменной aptTags это массив строк ["premium", "promoted", "top"]
 
 const apartment = {
-  imgUrl: "https://via.placeholder.com/640x480",
-  descr: "Spacious apartment in the city center",
+  imgUrl: 'https://via.placeholder.com/640x480',
+  descr: 'Spacious apartment in the city center',
   rating: 4,
   price: 2153,
-  tags: ["premium", "promoted", "top"],
+  tags: ['premium', 'promoted', 'top'],
 };
 
 // Change code below this line
@@ -1318,15 +1300,15 @@ const aptTags = apartment.tags;
 // Значение переменной lastTag это "top"
 
 const apartment = {
-  imgUrl: "https://via.placeholder.com/640x480",
-  descr: "Spacious apartment in the city center",
+  imgUrl: 'https://via.placeholder.com/640x480',
+  descr: 'Spacious apartment in the city center',
   rating: 4,
   price: 2153,
-  tags: ["premium", "promoted", "top"],
+  tags: ['premium', 'promoted', 'top'],
   owner: {
-    name: "Henry",
-    phone: "982-126-1588",
-    email: "henry.carter@aptmail.com",
+    name: 'Henry',
+    phone: '982-126-1588',
+    email: 'henry.carter@aptmail.com',
   },
 };
 
@@ -1336,7 +1318,7 @@ const ownerPhone = apartment.owner.phone;
 const ownerEmail = apartment.owner.email;
 const numberOfTags = apartment.tags.length;
 const firstTag = apartment.tags[0];
-const lastTag = apartment.tags[apartment.tags.length-1];
+const lastTag = apartment.tags[apartment.tags.length - 1];
 // Change code above this line
 
 // 3.5
@@ -1359,11 +1341,11 @@ const lastTag = apartment.tags[apartment.tags.length-1];
 // Значение переменной aptTags это ["premium", "promoted", "top"]
 
 const apartment = {
-  imgUrl: "https://via.placeholder.com/640x480",
-  descr: "Spacious apartment in the city center",
+  imgUrl: 'https://via.placeholder.com/640x480',
+  descr: 'Spacious apartment in the city center',
   rating: 4,
   price: 2153,
-  tags: ["premium", "promoted", "top"],
+  tags: ['premium', 'promoted', 'top'],
 };
 
 // Change code below this line
@@ -1409,7 +1391,7 @@ apartment.tags.push('trusted');
 console.log(apartment.price);
 console.log(apartment.rating);
 console.log(apartment.name);
-console.log(apartment.tags); 
+console.log(apartment.tags);
 
 // 3.7
 // Добавь объекту apartment несколько новых свойств:
@@ -1448,7 +1430,7 @@ apartment.location.country = 'Jamaica';
 apartment.location.city = 'Kingston';
 
 // 3.8
-// Дополни код объявления объекта так, чтобы у него были свойства name, price, image и tags со 
+// Дополни код объявления объекта так, чтобы у него были свойства name, price, image и tags со
 // значениями из переменных с аналогичными именами.Обязательно используй синтаксис коротких свойств.
 
 // Объявлена переменная product
@@ -1495,13 +1477,260 @@ const credentials = {
   // Change code above this line
 };
 
-3.10
-Перебери объект apartment используя цикл for...in и запиши в массив keys все его ключи, а 
-в массив values все значения его свойств.
+// 3.10
+// Перебери объект apartment используя цикл for...in и запиши в массив keys все его ключи, а
+// в массив values все значения его свойств.
 
-Объявлена переменная apartment
-Значение переменной apartment это объект
-Объявлена переменная keys
-Значение переменной keys это массив ["descr", "rating", "price"]
-Объявлена переменная values
-Значение переменной values это массив ["Spacious apartment in the city center", 4, 2153]
+// Объявлена переменная apartment
+// Значение переменной apartment это объект
+// Объявлена переменная keys
+// Значение переменной keys это массив ["descr", "rating", "price"]
+// Объявлена переменная values
+// Значение переменной values это массив ["Spacious apartment in the city center", 4, 2153]
+
+const apartment = {
+  descr: 'Spacious apartment in the city center',
+  rating: 4,
+  price: 2153,
+};
+const keys = [];
+const values = [];
+// Change code below this line
+
+for (const key in apartment) {
+  keys.push(key);
+  values.push(apartment[key]);
+}
+
+console.log(keys);
+console.log(values);
+
+// 3.11
+// Выполни рефакторинг решения предыдущего задания добавив в цикл for...in проверку на собственное свойство.
+
+// Объявлена переменная advert.
+// Значение переменной advert это объект.
+// Объявлена переменная apartment.
+// Значение переменной apartment это объект.
+// Объявлена переменная keys.
+// Значение переменной keys это массив ["descr", "rating", "price"].
+// Объявлена переменная values.
+// Значение переменной values это массив["Spacious apartment in the city center", 4, 2153].
+
+const keys = [];
+const values = [];
+const advert = {
+  service: 'apt',
+};
+const apartment = Object.create(advert);
+apartment.descr = 'Spacious apartment in the city center';
+apartment.rating = 4;
+apartment.price = 2153;
+
+for (const key in apartment) {
+  // Change code below this line
+  if (apartment.hasOwnProperty(key)) {
+    keys.push(key);
+    values.push(apartment[key]);
+  }
+  // Change code above this line
+}
+
+// 3.12
+// Напиши функцию countProps(object), которая считает и возвращает количество собственных свойств
+// объекта в параметре object.Используй переменную propCount для хранения количества свойств объекта.
+
+// Объявлена функция countProps(object)
+// Вызов countProps({}) возвращает 0
+// Вызов countProps({ name: "Mango", age: 2 }) возвращает 2
+// Вызов countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }) возвращает 3
+// Функция подсчитывает только собственные свойства объекта
+
+// 3.12
+// Напиши функцию countProps(object), которая считает и возвращает количество собственных свойств
+// объекта в параметре object.Используй переменную propCount для хранения количества свойств объекта.
+
+// Объявлена функция countProps(object)
+// Вызов countProps({}) возвращает 0
+// Вызов countProps({ name: "Mango", age: 2 }) возвращает 2
+// Вызов countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }) возвращает 3
+// Функция подсчитывает только собственные свойства объекта
+
+function countProps(object) {
+  let propCount = 0;
+  for (const key in object) {
+    if (object.hasOwnProperty(key)) {
+      propCount += 1;
+    }
+  }
+
+  return propCount;
+}
+
+console.log(countProps({})); // возвращает 0
+console.log(countProps({ name: 'Mango', age: 2 })); // возвращает 2
+console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 })); // возвращает 3
+
+// 3.13
+// Перебери объект apartment используя метод Object.keys() и цикл for...of.Запиши в переменную keys
+// массив ключей собственных свойств объекта apartment, и добавь в массив values все значения его свойств.
+
+// Объявлена переменная apartment.
+// Значение переменной apartment это объект.
+// Объявлена переменная keys.
+// Значение переменной keys это массив ["descr", "rating", "price"].
+// Значение переменной keys получено с помощью метода Object.keys().
+// Объявлена переменная values.
+// Значение переменной values это массив ["Spacious apartment in the city center", 4, 2153].
+// Значение переменной values получено с помощью цикла for...of.
+
+const apartment = {
+  descr: 'Spacious apartment in the city center',
+  rating: 4,
+  price: 2153,
+};
+const values = [];
+// Change code below this line
+const keys = Object.keys(apartment);
+
+for (const key of keys) {
+  values.push(apartment[key]);
+}
+console.log(keys);
+console.log(values);
+
+// 3.14
+// Выполни рефакторинг функции countProps(object) используя метод Object.keys() и, возможно,
+// но необязательно, цикл for...of.
+
+// Объявлена функция countProps(object)
+// Вызов countProps({}) возвращает 0
+// Вызов countProps({ name: "Mango", age: 2 }) возвращает 2
+// Вызов countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }) возвращает 3
+// Функция подсчитывает только собственные свойства объекта
+// Функция использует метод Object.keys() и, возможно, цикл for...of
+
+function countProps(object) {
+  let propCount = 0;
+
+  for (let obj of Object.keys(object)) {
+    propCount += 1;
+  }
+
+  return propCount;
+}
+
+console.log(countProps({})); // возвращает 0
+console.log(countProps({ name: 'Mango', age: 2 })); // возвращает 2
+console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 })); // возвращает 3
+
+// 3.15
+// Запиши в переменную keys массив ключей собственных свойств объекта apartment, а в переменную values
+// массив всех значений его свойств.Используй методы Object.keys() и Object.values().
+
+// Объявлена переменная apartment
+// Значение переменной apartment это объект
+// Объявлена переменная keys
+// Значение переменной keys это массив ["descr", "rating", "price"]
+// Объявлена переменная values
+// Значение переменной values это массив ["Spacious apartment in the city center", 4, 2153]
+// Для получения массива ключей объекта apartment используется Object.keys()
+// Для получения массива значений объекта apartment используется Object.values()
+
+const apartment = {
+  descr: 'Spacious apartment in the city center',
+  rating: 4,
+  price: 2153,
+};
+// Change code below this line
+const keys = Object.keys(apartment);
+const values = Object.values(apartment);
+
+console.log(keys);
+console.log(values);
+
+// 3.16
+// Напиши функцию countTotalSalary(salaries) которая принимает объект зарплат, где имя свойства
+// это имя сотрудника, а значение свойства это зарплата.Функция должна рассчитать общую сумму зарплат
+// сотрудников и вернуть её.Используй переменную totalSalary для хранения общей суммы зарплаты.
+
+// Объявлена функция countTotalSalary(salaries)
+// Вызов countTotalSalary({}) возвращает 0
+// Вызов countTotalSalary({ mango: 100, poly: 150, alfred: 80 }) возвращает 330
+// Вызов countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }) возвращает 400
+// Функция учитывает только собственные свойства объекта
+
+function countTotalSalary(salaries) {
+  let totalSalary = 0;
+  for (const salary of Object.values(salaries)) {
+    totalSalary += salary;
+  }
+
+  return totalSalary;
+}
+
+console.log(countTotalSalary({})); // возвращает 0
+console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 })); // возвращает 330
+console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 })); // возвращает 400
+
+
+// 3.17
+// Перебери массив объектов colors используя цикл for...of.Добавь в массив hexColors значения свойств
+// hex, а в массив rgbColors значения свойств rgb из всех объектов массива colors.
+
+// Объявлена переменная colors
+// Значение переменной colors это массив
+// Объявлена переменная hexColors
+// Значение переменной hexColors это массив ["#f44336", "#2196f3", "#4caf50", "#ffeb3b"]
+// Объявлена переменная rgbColors
+// Значение переменной rgbColors это массив ["244,67,54", "33,150,243", "76,175,80", "255,235,59"]
+
+const colors = [
+  { hex: '#f44336', rgb: '244,67,54' },
+  { hex: '#2196f3', rgb: '33,150,243' },
+  { hex: '#4caf50', rgb: '76,175,80' },
+  { hex: '#ffeb3b', rgb: '255,235,59' },
+];
+
+const hexColors = [];
+const rgbColors = [];
+// Change code below this line
+for (const color of colors) {
+  hexColors.push(color.hex);
+  rgbColors.push(color.rgb);
+}
+console.log(hexColors);
+console.log(rgbColors);
+
+// 3.18
+// Напиши функцию getProductPrice(productName) которая принимает один параметр productName - название
+// продукта. Функция ищет объект продукта с таким именем(свойство name) в массиве products и возвращает
+// его цену(свойство price).Если продукт с таким названием не найден, функция должна возвращать null.
+
+// Объявлена функция getProductPrice(productName).
+// Вызов getProductPrice("Radar") возвращает 1300.
+// Вызов getProductPrice("Grip") возвращает 1200.
+// Вызов getProductPrice("Scanner") возвращает 2700.
+// Вызов getProductPrice("Droid") возвращает 400.
+// Вызов getProductPrice("Engine") возвращает null.
+
+const products = [
+  { name: 'Radar', price: 1300, quantity: 4 },
+  { name: 'Scanner', price: 2700, quantity: 3 },
+  { name: 'Droid', price: 400, quantity: 7 },
+  { name: 'Grip', price: 1200, quantity: 9 },
+];
+
+function getProductPrice(productName) {
+  for (const key of products) 
+    if (key.name === productName) 
+      return key.price;
+      return null
+    } 
+  
+
+console.log(getProductPrice('Radar')); // возвращает 1300.
+console.log(getProductPrice('Grip')); // возвращает 1200.
+console.log(getProductPrice('Scanner')); // возвращает 2700.
+console.log(getProductPrice('Droid')); // возвращает 400.
+console.log(getProductPrice('Engine')); // возвращает null.
